@@ -1,4 +1,5 @@
-# MacroPad
+# MacroPad Hotfix
+### A fork to fix a few bugs and add a few QOL features
 
 This is a tool for turning any key-based input device into a "macropad" for
 triggering commands on your PC. Although designed with traditional keyboard
