@@ -12,6 +12,7 @@ MacroPad's most powerful feature is layering, which allows keys to change the
 mapping of the device on the fly.
 
 ### Changelog
+* 03-04-2026 - Added some helpful commands line flags, and made it more obvious when listening has started.
 
 * 01-12-2020 - Added `events` section to config for firing commands based on
   state changes.
@@ -30,6 +31,11 @@ For those who like learning by example, I've included my
 functionality.
 
 If you're having trouble setting up a config, open up an issue and I will help.
+
+## Todo
+As this is mostly just me fixing up things for personal use, nothing major is guaranteed to be added. Below is a list of things that may be fixed or added:
+
+* Better Wayland support
 
 ## Requirements
 
