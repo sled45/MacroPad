@@ -26,7 +26,7 @@ DEBUG = False
 ASSIST_MODE = False
 NO_GROUP = False # for skipping `input` group checking
 PASSTHROUGH = False
-USING_DEVICE_NAME = False
+USING_DEVICE_NAME = True
 
 # enums
 KEY_UP = 0
@@ -738,14 +738,14 @@ def main(devicePath):
 def usage():
     print("MacroPad.py Hotfix - sled45 (2026) - original by flags (2020) - ver. %.1f" % VERSION)
     print("Usage:")
-    print("\t<file>\t\t - run MacroPad with configuration file")
-    print("\t--detect\t - select device and output default config file")
-    print("\t--show <file>\t - print all key inputs to the terminal (will not fire binds)")
+    print("\t<file>\t\t\t - run MacroPad with configuration file")
+    print("\t--detect\t\t - select device and output default config file")
+    print("\t--show <file>\t\t - print all key inputs to the terminal (will not fire binds)")
     print("\nExtras:")
-    print("\t--assist\t - print out keybinds in the terminal")
-    print("\t--nogroup\t - ignore group requirement")
-    print("\t--force-i3\t - skip DE detection and assume i3 is running")
-
+    print("\t--assist\t\t - print out keybinds in the terminal")
+    print("\t--nogroup\t\t - ignore group requirement")
+    print("\t--force-i3\t\t - skip DE detection and assume i3 is running")
+    print("\t--use-device-name\t - use name to capture device instead of path (may fix crash on some setups)")
 
 if __name__ == "__main__":
     if "--assist" in sys.argv:
@@ -757,6 +757,11 @@ if __name__ == "__main__":
         NO_GROUP = True
 
         sys.argv.remove("--nogroup")
+
+    if "--use-device-name" in sys.argv:
+        USING_DEVICE_NAME = True
+
+        sys.argv.remove("--use-device-name")
 
     if len(sys.argv) == 2:
         arg = sys.argv[1]
