@@ -641,6 +641,7 @@ def getDeviceViaName(name):
     return None
 
 def listen(devicePath):
+    print("Now listening...")
     # open the device via evdev
     if USING_DEVICE_NAME:
         while True:
