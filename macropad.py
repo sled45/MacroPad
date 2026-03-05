@@ -8,16 +8,13 @@ import sys
 import grp
 import os
 
+I3_ENABLED = False
 
-if "--no-i3" in sys.argv:
-    I3_ENABLED = False
+if os.environ.get("XDG_CURRENT_DESKTOP") == "i3":
+    I3_ENABLED = True
+    import i3msg as i3
 else:
-    try:
-        import i3msg as i3
-
-        I3_ENABLED = True
-    except:
-        I3_ENABLED = False
+    I3_ENABLED = False
 
 VERSION = 1.1
 DEBUG = False
