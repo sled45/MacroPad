@@ -26,7 +26,7 @@ DEBUG = False
 ASSIST_MODE = False
 NO_GROUP = False # for skipping `input` group checking
 PASSTHROUGH = False
-USING_DEVICE_NAME = True
+USING_DEVICE_NAME = False
 
 # enums
 KEY_UP = 0
