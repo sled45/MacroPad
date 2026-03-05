@@ -12,6 +12,7 @@ I3_ENABLED = False
 
 if "--force-i3" in sys.argv:
     I3_ENABLED = True
+    import i3msg as i3
     sys.argv.remove("--force-i3")
 else:
     if os.environ.get("XDG_CURRENT_DESKTOP") == "i3":
