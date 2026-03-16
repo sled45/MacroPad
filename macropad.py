@@ -576,6 +576,7 @@ def setLayer(layer, lock=False, hot=False):
 def runCommand(command, event=None):
     # do the UNIX double-fork magic, see Stevens' "Advanced 
     # Programming in the UNIX Environment" for details (ISBN 0201563177)
+    newCommand = command.replace("%LAYER%", str(CURRENT_LAYER))
     try: 
         pid = os.fork() 
         if pid > 0:
@@ -602,7 +603,7 @@ def runCommand(command, event=None):
         sys.exit(1)
 
     # do stuff
-    subprocess.Popen(command, shell=True, stdout=subprocess.PIPE,
+    subprocess.Popen(newCommand, shell=True, stdout=subprocess.PIPE,
             stderr=subprocess.PIPE)
 
     # all done
